@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
     Route::post('/login', [LoginController::class, 'login'])->name('login');
-    Route::group(['prefix' => 'posts'], function () {
+    Route::group(['prefix' => 'posts', 'as' => 'posts.'], function () {
         Route::get('/',  [PostController::class, 'index'])->name('index');
         Route::get('/{id}',  [PostController::class, 'show'])->name('show');
     });

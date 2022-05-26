@@ -19,7 +19,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
     Route::post('/login', [LoginController::class, 'login'])->name('login');
 });
 
-Route::post('/posts',  [PostController::class, 'store'])->name('index');
+Route::get('/posts',  [PostController::class, 'index'])->name('index');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {

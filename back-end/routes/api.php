@@ -19,7 +19,14 @@ Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
     Route::post('/login', [LoginController::class, 'login'])->name('login');
 });
 
-Route::get('/posts',  [PostController::class, 'index'])->name('index');
+
+
+Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/',  [PostController::class, 'index'])->name('index');
+        Route::get('/{id}',  [PostController::class, 'show'])->name('show');
+    });
+});
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {

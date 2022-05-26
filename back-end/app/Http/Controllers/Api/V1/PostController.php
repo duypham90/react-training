@@ -22,4 +22,16 @@ class PostController extends Controller
         $data = $this->postService->getList();
         return response()->json($data);
     }
+
+    /**
+     * Show the profile for a given post.
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show($id)
+    {
+        $data = $this->postService->findOrFail($id);
+
+        return response()->json($data);
+    }
 }

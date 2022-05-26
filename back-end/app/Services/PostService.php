@@ -25,4 +25,13 @@ class PostService
     {
         return $this->postRepo->getList();
     }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function findOrFail($id)
+    {
+        return $this->postRepo->findOrFail($id);
+    }
 }

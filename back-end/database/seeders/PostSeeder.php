@@ -31,7 +31,7 @@ class PostSeeder extends Seeder
                 'post_desc' => $faker->sentence,
                 'post_content' => $faker->paragraph,
                 'post_status' => 1,
-                'image_id' => 1,
+                'image_id' => rand(1,10),
                 'cate_id' => array_rand($cates),
                 'created_by' => array_rand($users),
                 'created_at' => now(),

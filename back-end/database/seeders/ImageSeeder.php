@@ -25,7 +25,6 @@ class ImageSeeder extends Seeder
             $data[] = [
                 'image_title' => $faker->sentence,
                 'image_desc' => $faker->slug,
-                'post_desc' => $faker->sentence,
                 'image_url' => "https://storage.googleapis.com/duypham-vn/uploads/$i.jpg",
                 'image_status' => 1,
                 'created_by' => 1,
@@ -33,6 +32,6 @@ class ImageSeeder extends Seeder
             ];
         }
 
-        Image::insert($item);
+        Image::insert($data);
     }
 }

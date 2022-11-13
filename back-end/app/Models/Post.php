@@ -83,7 +83,7 @@ class Post extends Model
      */
     public function cate()
     {
-        return $this->hasOne('App\Models\Category', 'id', 'cate_id');
+        return $this->hasOne('App\Models\Category', 'cate_id', 'cate_id');
     }
 
     /**

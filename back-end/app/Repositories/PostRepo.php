@@ -20,6 +20,6 @@ class PostRepo extends EloquentRepo
      */
     public function getList()
     {
-        return $this->model->with(['image', 'user'])->paginate();
+        return $this->model->with(['cate:cate_name', 'image:image_url', 'user:name'])->paginate();
     }
 }

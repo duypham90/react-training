@@ -28,10 +28,10 @@ class PostService
 
     /**
      * @param $id
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return \Illuminate\Database\Eloquent\Model|object|null
      */
     public function findOrFail($id)
     {
-        return $this->postRepo->findOrFail($id);
+        return $this->postRepo->detail($id);
     }
 }
